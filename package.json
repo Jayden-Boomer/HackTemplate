@@ -14,7 +14,7 @@
     "csv-parse": "^6.1.0",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "vue": "^3.5.22",
+    "vue": "^3.5.12",
     "vue-router": "^4.6.3"
   },
   "devDependencies": {
@@ -23,11 +23,12 @@
     "@types/node": "^20.14.12",
     "@types/vue-router": "^2.0.0",
     "@vitejs/plugin-vue": "^6.0.1",
+    "@vue/compiler-sfc": "^3.5.12",
     "autoprefixer": "^10.4.21",
     "concurrently": "^8.2.2",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.16",
-    "tsx": "^4.16.2",
-    "vite": "^7.1.7"
+    "tsx": "^4.20.6",
+    "vite": "^7.1.12"
   }
 }
