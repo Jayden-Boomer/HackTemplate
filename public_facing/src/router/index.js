@@ -6,10 +6,10 @@ import AuthView from '../views/AuthView.vue'
 import ChatView from '../views/ChatView.vue'
 
 const routes = [
-  { path: '/', component: HomeView },
-  { path: '/about', component: AboutView },
-  { path: '/chat', component: ChatView },
-  { path: '/auth', component: AuthView },
+  { path: '/', name: 'Home', component: HomeView },
+  { path: '/about', name: 'About', component: AboutView },
+  { path: '/chat', name: 'Chat', component: ChatView },
+  { path: '/auth', name: 'Auth', component: AuthView },
 ]
 
 const router = createRouter({

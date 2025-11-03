@@ -3,9 +3,7 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "dev": "vite",
-        "build": "vite build",
-        "serve": "vite preview"
+        "dev": "npm run ./src/server.ts"
     },
     "dependencies": {
         "vue": "^3.5.12",

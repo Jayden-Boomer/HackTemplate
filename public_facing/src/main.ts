@@ -6,3 +6,6 @@ import './index.css'
 createApp(App)
   .use(router)
   .mount('#app')
+
+const TITLE = "HackTemplate"
+document.getElementById("title").innerHTML = TITLE;

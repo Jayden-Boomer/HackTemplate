@@ -11,6 +11,8 @@
     "dev:both": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\""
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "@types/node": "^24.10.0",
+    "concurrently": "^8.2.2",
+    "npm": "^11.6.2"
   }
 }
