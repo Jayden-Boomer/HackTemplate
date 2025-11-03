@@ -1,19 +1,22 @@
-import dotenv from "dotenv";
 import express from "express";
-import bodyParser from "body-parser";
+import cors from "cors";
+// import bodyParser from "body-parser";
 import fs from "fs";
 import path from "path";
 import { parse } from "csv-parse";
-import type { RGBColor, usersCSVLine, userData } from "./types";
+import type { RGBColor, usersCSVLine, userData } from "../../public_facing/src/types";
 
-dotenv.config();
-const app = express();
-const port = 3000;
 
+export const serverApp = express();
+serverApp.use(cors());
+serverApp.use(express.json());
+const PORT = process.env.SERVER_PORT ?? 3000;
+const SERVER_BASE_URL = process.env.SERVER_BASE_URL ?? "/api"
 // Middleware to parse JSON bodies
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
+
 // Serve static files from the "public" folder
-app.use(express.static("public"));
+// app.use(express.static("public"));
 
 import { fileURLToPath } from "url";
 import { dirname } from "path";
@@ -105,8 +108,12 @@ async function csvContainsUsername(
 	});
 }
 
+export function makeEndpointURL(endpointName: string): string {
+	return `${SERVER_BASE_URL}/${endpointName}`
+}
+
 // Sign Up Endpoint: Add user if they do not already exist.
-app.post("/signup", async (req, res) => {
+serverApp.post(makeEndpointURL("signup"), async (req, res) => {
 	const { username, password } = req.body;
 	if (!username || !password) {
 		return res
@@ -171,7 +178,7 @@ app.post("/signup", async (req, res) => {
 });
 
 // Sign In Endpoint: Validate user credentials and return stored color.
-app.post("/signin", async (req, res) => {
+serverApp.post(makeEndpointURL("signin"), async (req, res) => {
 	const { username, password } = req.body;
 	if (!username || !password) {
 		return res
@@ -240,7 +247,7 @@ app.post("/signin", async (req, res) => {
 	// });
 });
 
-app.post("/gpt-submit", (req, res) => {
+serverApp.post(makeEndpointURL("chatbot-submit"), (req, res) => {
 	const { message } = req.body;
 	if (!message) {
 		return res
@@ -249,6 +256,10 @@ app.post("/gpt-submit", (req, res) => {
 	}
 
 	res.json({ message: "Successfully submitted chat" });
+});
+
+serverApp.post(makeEndpointURL("echo"), (req, res) => {
+  res.json({ youSent: req.body });
 });
 
 // app.post("/upload-file", async (req, res) => {
@@ -294,6 +305,6 @@ app.post("/gpt-submit", (req, res) => {
 // 	}
 // });
 
-app.listen(port, () => {
-	console.log(`Server is running on port ${port}\nlocalhost:${port}`);
+serverApp.listen(PORT, () => {
+	console.log(`Server is running on port ${PORT}\nhttp://localhost:${PORT}`);
 });

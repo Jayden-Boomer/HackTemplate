@@ -1,0 +1,7 @@
+put this in tsconfig.json in compiler options
+
+"baseUrl": ".",
+      "paths": {
+        "@components/*": ["src/components/*"],
+        "@utils/*": ["src/utils/*"]
+      }

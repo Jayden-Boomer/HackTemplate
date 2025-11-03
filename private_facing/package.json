@@ -1,0 +1,21 @@
+{
+    "name": "vite-vue-starter",
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "serve": "vite preview"
+    },
+    "dependencies": {
+        "vue": "^3.5.12",
+        "vue-router": "^4.6.3"
+    },
+    "devDependencies": {
+        "@types/node": "^20.19.24",
+        "cors": "^2.8.5",
+        "csv-parse": "^6.1.0",
+        "express": "^4.19.2",
+        "fs": "^0.0.1-security"
+    }
+}

@@ -3,32 +3,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "dev:server": "tsx src/server.ts",
-    "dev:all": "concurrently \"npm run dev:server\" \"npm run dev\"",
-    "build": "vite build",
-    "serve": "vite preview"
-  },
-  "dependencies": {
-    "body-parser": "^1.20.2",
-    "csv-parse": "^6.1.0",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
-    "vue": "^3.5.12",
-    "vue-router": "^4.6.3"
+    "dev:f": "npm run dev:frontend",
+    "dev:b": "npm run dev:backend",
+    "dev": "npm run dev:both",
+    "dev:frontend": "cd public_facing && npm run dev",
+    "dev:backend": "cd private_facing && npm run dev",
+    "dev:both": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\""
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.16",
-    "@types/express": "^4.17.21",
-    "@types/node": "^20.14.12",
-    "@types/vue-router": "^2.0.0",
-    "@vitejs/plugin-vue": "^6.0.1",
-    "@vue/compiler-sfc": "^3.5.12",
-    "autoprefixer": "^10.4.21",
-    "concurrently": "^8.2.2",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.16",
-    "tsx": "^4.20.6",
-    "vite": "^7.1.12"
+    "concurrently": "^8.2.2"
   }
 }

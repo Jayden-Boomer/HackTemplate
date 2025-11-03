@@ -1,0 +1,26 @@
+{
+    "name": "vite-vue-starter",
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "serve": "vite preview"
+    },
+    "dependencies": {
+        "npm": "^11.6.2",
+        "vue": "^3.5.12",
+        "vue-router": "^4.6.3"
+    },
+    "devDependencies": {
+        "@tailwindcss/postcss": "^4.1.16",
+        "@types/node": "^20.14.12",
+        "@types/vue-router": "^2.0.0",
+        "@vitejs/plugin-vue": "^6.0.1",
+        "@vue/compiler-sfc": "^3.5.12",
+        "autoprefixer": "^10.4.21",
+        "postcss": "^8.5.6",
+        "tailwindcss": "^4.1.16",
+        "vite": "^7.1.12"
+    }
+}
