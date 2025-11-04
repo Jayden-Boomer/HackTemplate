@@ -8,7 +8,8 @@
     "dev": "npm run dev:both",
     "dev:frontend": "cd public_facing && npm run dev",
     "dev:backend": "cd private_facing && npm run dev",
-    "dev:both": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\""
+    "dev:both": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "setup": "npm install && concurrently \"cd public_facing && npm install\" \"cd private_facing && npm install\""
   },
   "devDependencies": {
     "@types/node": "^24.10.0",

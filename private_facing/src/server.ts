@@ -18,14 +18,9 @@ const SERVER_BASE_URL = process.env.SERVER_BASE_URL ?? "/api"
 // Serve static files from the "public" folder
 // app.use(express.static("public"));
 
-import { fileURLToPath } from "url";
-import { dirname } from "path";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
+const databaseDir = path.resolve("database")
 // Path to the users CSV file
-const csvFilePath = path.join(__dirname, "users.csv");
+const csvFilePath = path.join(databaseDir, "users.csv");
 
 // Ensure CSV file exists with headers
 if (!fs.existsSync(csvFilePath)) {
