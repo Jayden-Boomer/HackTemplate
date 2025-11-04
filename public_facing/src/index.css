@@ -51,7 +51,7 @@ body {
       border: 1px solid #ccc;
       border-radius: 4px;
     }
-    .toggle-password {
+    .toggle-vis-input {
       position: absolute;
       right: 10px;
       top: 50%;
