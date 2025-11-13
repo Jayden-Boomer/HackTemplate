@@ -3,13 +3,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev:f": "npm run dev:frontend",
-    "dev:b": "npm run dev:backend",
-    "dev": "npm run dev:both",
-    "dev:frontend": "cd public_facing && npm run dev",
-    "dev:backend": "cd private_facing && npm run dev",
-    "dev:both": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
-    "setup": "npm install && concurrently \"cd public_facing && npm install\" \"cd private_facing && npm install\""
+    "public": "cd public_facing && npm run dev",
+    "private": "cd private_facing && npm run dev",
+    "both": "concurrently \"npm run dev:private\" \"npm run dev:public\"",
+    "copy-envs": "concurrently \"cd public_facing && cp -n .env.example .env\" \"cd private_facing && cp -n .env.example .env\"",
+    "npm-install-all": "npm install && concurrently \"cd public_facing && npm install\" \"cd private_facing && npm install\"",
+    "setup": "npm run copy-envs && npm run npm-install-all"
   },
   "devDependencies": {
     "@types/node": "^24.10.0",

@@ -1,18 +1,22 @@
-<script>
-import AuthFormComponent from '../components/auth/AuthFormComponent.vue'
+<script setup>
+    // import AuthFormComponent from '../components/auth/AuthFormComponent.vue'
+    import GAuthButton from '../components/auth/GoogleSignInButtonComponent.vue'
+    const title = "Sign In"
 </script>
 
 <template>
   <div class="login-container" id="loginContainer">
-    <AuthFormComponent/>
-    <h2>Sign Up</h2>
+    <GAuthButton />
+    <!-- <AuthFormComponent :title="title"/> -->
+
+    <!-- <h2>Sign Up</h2>
     <form id="signupForm">
       <div class="input-container">
         <input type="text" id="signupUsername" placeholder="Username" required />
       </div>
       <div class="input-container">
         <input type="password" id="signupPassword" placeholder="Password" required />
-        <span class="toggle-password" data-target="signupPassword">👁</span>
+        <span class="toggle-vis-input" data-target="signupPassword">👁</span>
       </div>
       <button type="submit">Sign Up</button>
       <div id="signupError" class="error"></div>
@@ -29,6 +33,6 @@ import AuthFormComponent from '../components/auth/AuthFormComponent.vue'
       </div>
       <button type="submit">Sign In</button>
       <div id="signinError" class="error"></div>
-    </form>
+    </form> -->
   </div>
 </template>

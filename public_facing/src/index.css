@@ -109,3 +109,8 @@ body {
       cursor: pointer;
       font-size: 16px;
     }
+    
+    button {
+        border-radius: 2px;
+        border:#000
+    }

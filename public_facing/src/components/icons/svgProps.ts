@@ -1,4 +1,4 @@
-export class SVGProps {
+export interface SVGProps {
 	width: string;
 	height?: string;
 	color?: string;

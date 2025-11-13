@@ -8,12 +8,16 @@
         "serve": "vite preview"
     },
     "dependencies": {
+        "google-auth-library": "^10.5.0",
         "npm": "^11.6.2",
+        "typescript": "^5.9.3",
         "vue": "^3.5.12",
         "vue-router": "^4.6.3"
     },
     "devDependencies": {
         "@tailwindcss/postcss": "^4.1.16",
+        "@types/gapi": "^0.0.47",
+        "@types/gapi.auth2": "^0.0.61",
         "@types/node": "^20.14.12",
         "@types/vue-router": "^2.0.0",
         "@vitejs/plugin-vue": "^6.0.1",

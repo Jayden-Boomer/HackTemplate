@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const PRIATE_SERVER_PORT = process.env.SERVER_PORT ?? 3000;
-const PUBLIC_VIEW_PORT = process.env.PUBLIC_PORT ?? 8080;
+const PUBLIC_VIEW_PORT = process.env.PUBLIC_VIEW_PORT ?? 8080;
 
 export default defineConfig({
   root: __dirname,
